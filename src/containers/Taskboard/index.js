@@ -22,9 +22,9 @@ class TaskBoard extends Component {
 
   componentDidMount() {
     const { taskActions } = this.props;
-    const { fetchListTaskRequest } = taskActions;
+    const { fetchListTask } = taskActions;
 
-    fetchListTaskRequest();
+    fetchListTask();
   }
 
   renderBoard() {
@@ -78,6 +78,7 @@ class TaskBoard extends Component {
           <AddIcon />
           Thêm mới công việc
         </Button>
+
         {this.renderBoard()}
 
         {this.renderForm()}
@@ -89,7 +90,7 @@ class TaskBoard extends Component {
 TaskBoard.propTypes = {
   classes: PropTypes.object,
   taskActions: PropTypes.shape({
-    fetchListTaskRequest: PropTypes.func,
+    fetchListTask: PropTypes.func,
   }),
   listTasks: PropTypes.array,
 };

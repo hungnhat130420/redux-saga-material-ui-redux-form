@@ -6,7 +6,10 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import Taskboard from "./../Taskboard/index";
 import theme from "./../../commons/themes/index";
 import { Provider } from "react-redux";
-import configureStore from './../../redux/configureStore';
+import configureStore from "./../../redux/configureStore";
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import GlobalLoading from "./../../components/GlobalLoading/index"
 
 const store = configureStore();
 class App extends Component {
@@ -25,6 +28,8 @@ class App extends Component {
       // </div>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
+          <ToastContainer/>
+          <GlobalLoading/>
           <Taskboard />
         </ThemeProvider>
       </Provider>
